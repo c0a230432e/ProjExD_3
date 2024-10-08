@@ -162,6 +162,24 @@ class Score:
         self.img = self.fonto.render(f'スコア：{self.point}', 0, (0, 0, 255))
         screen.blit(self.img, self.rct)
 
+class Explosion():
+    """
+    爆発エフェクトを表示するクラス
+    """
+    def __init__(self, bomb):
+        """
+        爆発エフェクトSurfaceを生成する
+        """
+        self.img = pg.image.load("fig/explosion.gif")
+        self.imgs = [self.img, pg.transform.flip(self.img, True, True)]
+        self.rct = self.img.get_rect()
+
+
+    def update(self):
+        """
+        交互に表示する爆発エフェクトSurfaceを生成
+        """
+
 
 def main():
     pg.display.set_caption("たたかえ！こうかとん")
